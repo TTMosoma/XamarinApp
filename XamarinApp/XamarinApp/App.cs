@@ -7,9 +7,10 @@
     public class App : Application
     {
         public App()
-        { 
+        {
             MainPage = new Master(new MasterNavigation(new MenuItems()) { Title = "Welcome" }, new Home());
         }
+         
 
         protected override void OnStart()
         {

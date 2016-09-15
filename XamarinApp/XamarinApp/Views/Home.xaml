@@ -3,22 +3,30 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              Title="Home"
              x:Class="XamarinApp.Views.Home">
-
-  <ListView>
+  <ListView ItemsSource="{Binding Jobs}" >
     <ListView.ItemTemplate>
       <DataTemplate>
         <ViewCell>
           <Grid>
             <Grid.RowDefinitions>
               <RowDefinition Height="Auto" />
-              <RowDefinition Height="Auto" />
-              <RowDefinition Height="Auto" />
+              <RowDefinition Height="10" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-              <ColumnDefinition Width="50" />
+              <ColumnDefinition Width="Auto" />
               <ColumnDefinition Width="*" />
-              <ColumnDefinition Width="5" />
+              <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
+
+            <Image Source="{Binding JobImage}" Grid.Column="0" />
+
+            <StackLayout Grid.Column="1" >
+              <Label Text="{Binding JobName}" />
+              <Label Text="{Binding HoursSpent,StringFormat='{0} Hour(s)'}" />
+              <Label Text="{Binding RunningCost,StringFormat='R {0}'}"  />
+            </StackLayout>
+
+            <Image Grid.Column="2"/>
 
           </Grid>
         </ViewCell>
