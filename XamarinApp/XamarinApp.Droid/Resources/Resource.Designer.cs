@@ -3327,8 +3327,8 @@ namespace XamarinApp.Droid
 			// aapt resource value: 0x7f020068
 			public const int mr_ic_settings_light = 2130837608;
 			
-			// aapt resource value: 0x7f02006c
-			public const int notification_template_icon_bg = 2130837612;
+			// aapt resource value: 0x7f02006d
+			public const int notification_template_icon_bg = 2130837613;
 			
 			// aapt resource value: 0x7f020069
 			public const int Plumbing = 2130837609;
@@ -3338,6 +3338,9 @@ namespace XamarinApp.Droid
 			
 			// aapt resource value: 0x7f02006b
 			public const int Roofing = 2130837611;
+			
+			// aapt resource value: 0x7f02006c
+			public const int tick = 2130837612;
 			
 			static Drawable()
 			{

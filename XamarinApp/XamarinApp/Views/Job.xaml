@@ -4,20 +4,20 @@
              BackgroundColor="Transparent"
              x:Class="XamarinApp.Views.Job">
   <Grid>
-    <Grid BackgroundColor="Black" Opacity="0.5" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
-
-    <Grid>
+    <Grid BackgroundColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
       <Grid.RowDefinitions>
+        <RowDefinition Height="10" />
         <RowDefinition Height="Auto" />
         <RowDefinition Height="Auto" />
+        <RowDefinition Height="10" />
       </Grid.RowDefinitions>
       <Grid.ColumnDefinitions>
         <ColumnDefinition Width="10" />
-        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="Auto" />
         <ColumnDefinition Width="10" />
       </Grid.ColumnDefinitions>
 
-      <StackLayout Grid.Column="1" Grid.Row="0" BindingContext="{Binding SelectedJob}" >
+      <StackLayout Grid.Column="1" Grid.Row="1" BindingContext="{Binding SelectedJob}" >
         <Label Text="Job Name:" />
         <Label Text="{Binding JobName}" FontSize="30" />
         <Label Text="Hours Spent:" />
@@ -25,19 +25,19 @@
 
         <Grid>
           <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="Auto" />
           </Grid.ColumnDefinitions>
           <Label Text="Is job complete" Grid.Column="0" />
-          <Image Grid.Column="1" Source="CheckBoxB.png" HeightRequest="32" VerticalOptions="EndAndExpand">
+          <Image  Grid.Column="4" Source="CheckBox.png" HeightRequest="32" VerticalOptions="EndAndExpand">
             <Image.GestureRecognizers>
               <TapGestureRecognizer Command="{Binding CompleteChecked}" />
             </Image.GestureRecognizers>
           </Image>
-          <!--<Image Grid.Column="4" Source="tick.png" HeightRequest="28" IsVisible="{Binding IsComplete}"/>-->
+          <Image Grid.Column="4" Source="tick.png" HeightRequest="28" IsVisible="{Binding IsComplete}"/>
         </Grid>
       </StackLayout>
-      <Button Text="Dismiss" Grid.Row="1" Grid.Column="1" Command="{Binding Dismiss}" BackgroundColor="#1FBED6" />
+      <Button Text="Dismiss" Grid.Row="2" Grid.Column="1" Command="{Binding Dismiss}" BackgroundColor="#1FBED6" />
     </Grid>
   </Grid>
 </ContentPage>

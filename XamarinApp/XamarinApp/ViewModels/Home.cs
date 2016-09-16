@@ -46,7 +46,7 @@ namespace XamarinApp.ViewModels
                 jobs.Add(new Models.Job()
                 {
                     HoursSpent = rnd.Next(1, 10),
-                    IsComplete = rnd.Next(1, 2) > 1 ? true : false,
+                    IsComplete = rnd.Next(1, 10) >= 5  ?  false : true,
                     JobImagePath = string.Format("{0}.png", jobname),
                     JobName = jobname,
                 });
