@@ -2,13 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              Title="Profile"
-              xmlns:xf="clr-namespace:Xamarin.Forms;assembly=WrapLayoutDemo"
-             x:Class="XamarinApp.Views.Profile">
-  <xf:WrapLayout Orientation="Horizontal">
-    <Button Text="Button A" />
-    <Button Text="Button B" />
-    <Button Text="Button C" />
-    <Button Text="Button D" />
-    <Button Text="Button E" />
-  </xf:WrapLayout>
+             BackgroundColor="White"
+             x:Class="XamarinApp.Views.Profile"> 
+  <Label Text="Under construction" VerticalOptions="Center" HorizontalOptions="Center" />
 </ContentPage>

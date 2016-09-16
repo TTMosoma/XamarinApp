@@ -2,13 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              Title="Home"
+             
              BackgroundColor="White"
              x:Class="XamarinApp.Views.Home">
   <ListView ItemsSource="{Binding Jobs}" SelectedItem="{Binding SelectedJob}" HasUnevenRows="True" SeparatorVisibility="Default" SeparatorColor="Black" >
-    <ListView.GestureRecognizers>
-      <TapGestureRecognizer
-              Command="{Binding CompleteChecked}" />
-    </ListView.GestureRecognizers>
+
     <ListView.ItemTemplate>
       <DataTemplate>
         <ViewCell>
@@ -34,21 +32,13 @@
               <Label Text="{Binding RunningCost,StringFormat='R {0}'}" FontAttributes="Bold"  FontSize="13" TextColor="Gray"/>
             </StackLayout>
 
-            <Image Grid.Column="4" Source="CheckBoxB.png" HeightRequest="32">
-              <Image.GestureRecognizers>
-                <TapGestureRecognizer
-                        Command="{Binding CompleteChecked}" />
-              </Image.GestureRecognizers>
-            </Image>
-
-            <Image Grid.Column="4" Source="tick.png" HeightRequest="28" IsVisible="{Binding IsComplete}">
-              
-            </Image>
+            <Image Grid.Column="4" Source="CheckBoxB.png" HeightRequest="32"/>
+            <Image Grid.Column="4" Source="tick.png" HeightRequest="28" IsVisible="{Binding IsComplete}"/>
 
           </Grid>
         </ViewCell>
       </DataTemplate>
     </ListView.ItemTemplate>
-  
+
   </ListView>
 </ContentPage>

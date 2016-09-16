@@ -4,20 +4,18 @@ namespace XamarinApp.ViewModels
     using Models;
     using System.Collections.ObjectModel;
     using Mvvm;
-    using System.Collections;
     using System.Collections.Generic;
     using System;
-    using System.Windows.Input;
     using Xamarin.Forms;
+    using Classes;
 
     public class Home : MvvmBase
     {
-        private ICommand completeChecked { get; set; }
 
-        public ObservableCollection<Job> Jobs { get; set; }
-        private Job selectedJob;
+        public ObservableCollection<Models.Job> Jobs { get; set; }
+        private Models.Job selectedJob;
 
-        public Job SelectedJob
+        public Models.Job SelectedJob
         {
             get { return selectedJob; }
             set
@@ -25,39 +23,30 @@ namespace XamarinApp.ViewModels
                 if (value == null) return;
                 selectedJob = value;
                 RaisePropertyChangedEvent(nameof(SelectedJob));
+
+                MessagingCenter.Send(new NavigationMessage() { Parameter = SelectedJob }, "Navigate");
             }
         }
 
         public Home()
         {
-            CompleteChecked = new Command(CompleteAction);
-            Jobs = new ObservableCollection<Job>(LoadJobs());
+            Jobs = new ObservableCollection<Models.Job>(LoadJobs());
         }
 
-        private void CompleteAction(object obj)
-        {
-
-        }
-
-        public ICommand CompleteChecked
-        {
-            get { return completeChecked; }
-            private set { completeChecked = value; }
-        }
-        private IEnumerable<Job> LoadJobs()
+        private IEnumerable<Models.Job> LoadJobs()
         {
             var jobNames = new string[] { "Plumbing", "Roofing", "Drainage" };
             Random rnd = new Random();
 
             var people = new List<Person>();
-            var jobs = new List<Job>();
-            for (int i = 0; i < 10; i++)
+            var jobs = new List<Models.Job>();
+            for (int i = 0; i < 20; i++)
             {
                 var jobname = jobNames[rnd.Next(jobNames.Length)];
-                jobs.Add(new Job()
+                jobs.Add(new Models.Job()
                 {
                     HoursSpent = rnd.Next(1, 10),
-                    IsComplete = false,
+                    IsComplete = rnd.Next(1, 2) > 1 ? true : false,
                     JobImagePath = string.Format("{0}.png", jobname),
                     JobName = jobname,
                 });

@@ -10,7 +10,7 @@
         {
             MainPage = new Master(new MasterNavigation(new MenuItems()) { Title = "Welcome" }, new Home());
         }
-         
+
 
         protected override void OnStart()
         {

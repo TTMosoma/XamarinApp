@@ -4,11 +4,11 @@
              x:Class="XamarinApp.Views.Master.MasterNavigation"
              Icon="menu.png">
   <ContentPage.Content>
-    <StackLayout WidthRequest="50">
-      <ListView BackgroundColor="Yellow" x:Name="listView" VerticalOptions="FillAndExpand" SeparatorVisibility="None">
+    <StackLayout >
+      <ListView BackgroundColor="Black" x:Name="listView" VerticalOptions="FillAndExpand" SeparatorVisibility="None">
         <ListView.ItemTemplate>
           <DataTemplate>
-            <ImageCell Text="{Binding Title}" Height="10" ImageSource="{Binding IconSource}" /> 
+            <ImageCell Text="{Binding Title}"  ImageSource="{Binding IconSource}" />
           </DataTemplate>
         </ListView.ItemTemplate>
       </ListView>

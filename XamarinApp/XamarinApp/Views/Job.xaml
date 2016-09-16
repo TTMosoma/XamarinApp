@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BackgroundColor="Transparent"
+             x:Class="XamarinApp.Views.Job">
+  <Grid>
+    <Grid BackgroundColor="Black" Opacity="0.5" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
+
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="10" />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="10" />
+      </Grid.ColumnDefinitions>
+
+      <StackLayout Grid.Column="1" Grid.Row="0" BindingContext="{Binding SelectedJob}" >
+        <Label Text="Job Name:" />
+        <Label Text="{Binding JobName}" FontSize="30" />
+        <Label Text="Hours Spent:" />
+        <Label Text="{Binding HoursSpent}"  FontSize="30"/>
+
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+          </Grid.ColumnDefinitions>
+          <Label Text="Is job complete" Grid.Column="0" />
+          <Image Grid.Column="1" Source="CheckBoxB.png" HeightRequest="32" VerticalOptions="EndAndExpand">
+            <Image.GestureRecognizers>
+              <TapGestureRecognizer Command="{Binding CompleteChecked}" />
+            </Image.GestureRecognizers>
+          </Image>
+          <!--<Image Grid.Column="4" Source="tick.png" HeightRequest="28" IsVisible="{Binding IsComplete}"/>-->
+        </Grid>
+      </StackLayout>
+      <Button Text="Dismiss" Grid.Row="1" Grid.Column="1" Command="{Binding Dismiss}" BackgroundColor="#1FBED6" />
+    </Grid>
+  </Grid>
+</ContentPage>

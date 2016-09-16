@@ -38,17 +38,22 @@
     <Compile Include="App.cs" />
     <Compile Include="Classes\MasterPageItem.cs" />
     <Compile Include="Classes\MenuItems.cs" />
+    <Compile Include="Classes\NavigationMessage.cs" />
     <Compile Include="Interfaces\IMenuItems.cs" />
     <Compile Include="Models\Job.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\Home.cs" />
     <Compile Include="Mvvm\MvvmBase.cs" />
+    <Compile Include="ViewModels\Job.cs" />
     <Compile Include="Views\About.xaml.cs">
       <DependentUpon>About.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Job.xaml.cs">
+      <DependentUpon>Job.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Master\Master.cs" />
     <Compile Include="Views\Master\MasterNavigation.xaml.cs">
@@ -102,6 +107,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Job.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.0.0.6482\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.0.0.6482\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
