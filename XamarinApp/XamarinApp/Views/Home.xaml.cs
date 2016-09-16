@@ -13,6 +13,7 @@ namespace XamarinApp.Views
         public Home()
         {
             InitializeComponent();
+            BindingContext = new ViewModels.Home();
         }
     }
 }
